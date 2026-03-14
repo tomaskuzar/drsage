@@ -2,5 +2,6 @@
 /vendor
 /public/*
 !/public/.gitkeep
+/.deploy
 .env
 npm-debug.log

@@ -8,6 +8,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "deploy": "powershell -ExecutionPolicy Bypass -File ./scripts/deploy-theme.ps1",
+    "deploy:remote": "powershell -ExecutionPolicy Bypass -File ./scripts/deploy-remote.ps1",
     "translate": "npm run translate:pot && npm run translate:update",
     "translate:pot": "wp i18n make-pot . ./resources/lang/sage.pot --include=\"theme.json,patterns,app,resources\"",
     "translate:update": "for file in ./resources/lang/*.po; do wp i18n update-po ./resources/lang/sage.pot $file; done",
