@@ -9,7 +9,7 @@ namespace App;
 use Illuminate\Support\Facades\Vite;
 
 /**
- * Inject styles into the block editor.
+ * Inject styles into the block editor...
  *
  * @return array
  */
