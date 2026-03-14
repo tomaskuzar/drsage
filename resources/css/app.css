@@ -2,3 +2,1004 @@
 @source "../../app/**/*.php";
 @source "../**/*.blade.php";
 @source "../**/*.js";
+
+:root {
+  --den-sky: #dff3fb;
+  --den-sky-deep: #b9e5f1;
+  --den-turquoise: #38c9d6;
+  --den-turquoise-deep: #0ea8bf;
+  --den-lime: #ddff73;
+  --den-lime-deep: #caef58;
+  --den-peach: #fff4e8;
+  --den-white: rgba(255, 255, 255, 0.86);
+  --den-ink: #111111;
+  --den-muted: #4b5b63;
+  --den-line: rgba(14, 168, 191, 0.14);
+  --den-shadow: 0 26px 60px rgba(72, 150, 167, 0.12);
+  --den-radius-xl: 2.25rem;
+  --den-radius-lg: 1.5rem;
+  --den-radius-md: 1.05rem;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: var(--den-ink);
+  font-family: "Avenir Next", "Gill Sans", "Trebuchet MS", sans-serif;
+  background:
+    radial-gradient(circle at 15% 0%, rgba(255, 255, 255, 0.8) 0, rgba(255, 255, 255, 0) 22rem),
+    radial-gradient(circle at 100% 12%, rgba(221, 255, 115, 0.45) 0, rgba(221, 255, 115, 0) 18rem),
+    linear-gradient(180deg, #edfaff 0%, var(--den-sky) 30%, var(--den-sky-deep) 100%);
+}
+
+body.home.page .content-info {
+  display: none;
+}
+
+.main {
+  display: block;
+}
+
+.banner {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  padding: 1rem 1rem 0;
+}
+
+.banner__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  width: min(100%, 78rem);
+  margin: 0 auto;
+  padding: 0.95rem 1.1rem;
+  border: 1px solid rgba(255, 255, 255, 0.68);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.74);
+  box-shadow: 0 14px 34px rgba(74, 145, 161, 0.1);
+  backdrop-filter: blur(14px);
+}
+
+.brand {
+  display: inline-grid;
+  color: var(--den-ink);
+  line-height: 1.1;
+  text-decoration: none;
+}
+
+.brand__eyebrow {
+  color: var(--den-turquoise-deep);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.brand__title {
+  font-family: "Arial Rounded MT Bold", "Trebuchet MS", sans-serif;
+  font-size: 1.05rem;
+}
+
+.banner__tagline {
+  margin: 0 0 0 auto;
+  color: rgba(17, 17, 17, 0.62);
+  font-size: 0.92rem;
+  line-height: 1.4;
+  white-space: nowrap;
+}
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nav__link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.72rem 1rem;
+  border-radius: 999px;
+  color: var(--den-ink);
+  font-weight: 700;
+  text-decoration: none;
+  transition:
+    background-color 180ms ease,
+    color 180ms ease,
+    transform 180ms ease;
+}
+
+.nav__link:hover,
+.nav__link:focus-visible {
+  background: rgba(56, 201, 214, 0.12);
+  transform: translateY(-1px);
+}
+
+.nav__link--active {
+  background: var(--den-ink);
+  color: #ffffff;
+}
+
+.page-shell {
+  width: min(100% - 2rem, 70rem);
+  margin: 0 auto;
+  padding: 2rem 0 4rem;
+}
+
+.page-article {
+  padding: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.62);
+  border-radius: var(--den-radius-xl);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.82), rgba(255, 255, 255, 0.66));
+  box-shadow: var(--den-shadow);
+  backdrop-filter: blur(12px);
+}
+
+.page-header {
+  display: grid;
+  gap: 0.7rem;
+  margin-bottom: 1.75rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--den-line);
+}
+
+.page-header__eyebrow {
+  margin: 0;
+  color: var(--den-turquoise-deep);
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.page-header__title {
+  margin: 0;
+  font-family: "Arial Rounded MT Bold", "Trebuchet MS", sans-serif;
+  font-size: clamp(2rem, 4vw, 3.25rem);
+  line-height: 1.02;
+}
+
+.page-header__excerpt {
+  max-width: 44rem;
+  margin: 0;
+  color: var(--den-muted);
+  font-size: 1.06rem;
+  line-height: 1.7;
+}
+
+.page-content {
+  color: var(--den-muted);
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+.page-content > :first-child {
+  margin-top: 0;
+}
+
+.page-content h2,
+.page-content h3,
+.page-content h4 {
+  color: var(--den-ink);
+  font-family: "Arial Rounded MT Bold", "Trebuchet MS", sans-serif;
+  line-height: 1.15;
+}
+
+.page-content h2 {
+  margin-top: 2.1rem;
+  margin-bottom: 0.8rem;
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+}
+
+.page-content h3 {
+  margin-top: 1.8rem;
+  margin-bottom: 0.7rem;
+  font-size: 1.35rem;
+}
+
+.page-content p,
+.page-content ul,
+.page-content ol,
+.page-content blockquote {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.page-content ul,
+.page-content ol {
+  padding-left: 1.35rem;
+}
+
+.page-content li + li {
+  margin-top: 0.45rem;
+}
+
+.page-content a {
+  color: var(--den-turquoise-deep);
+  font-weight: 700;
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.14em;
+}
+
+.page-content blockquote {
+  padding: 1rem 1.2rem;
+  border-left: 0.28rem solid var(--den-turquoise);
+  border-radius: 0 1rem 1rem 0;
+  background: rgba(255, 255, 255, 0.58);
+  color: var(--den-ink);
+}
+
+.page-content img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: 1.25rem;
+  box-shadow: 0 16px 34px rgba(76, 136, 149, 0.12);
+}
+
+.page-content table {
+  width: 100%;
+  border-collapse: collapse;
+  overflow: hidden;
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.74);
+}
+
+.page-content th,
+.page-content td {
+  padding: 0.85rem 1rem;
+  border-bottom: 1px solid rgba(14, 168, 191, 0.08);
+  text-align: left;
+}
+
+.page-content th {
+  color: var(--den-ink);
+  font-weight: 800;
+}
+
+.den-home {
+  position: relative;
+  overflow: clip;
+  min-height: 100vh;
+}
+
+.den-home::before,
+.den-home::after {
+  position: absolute;
+  z-index: 0;
+  content: "";
+  border-radius: 999px;
+}
+
+.den-home::before {
+  top: -9rem;
+  left: -8rem;
+  width: 24rem;
+  height: 24rem;
+  background: rgba(255, 255, 255, 0.42);
+  filter: blur(8px);
+}
+
+.den-home::after {
+  right: -8rem;
+  top: 10rem;
+  width: 22rem;
+  height: 22rem;
+  background: rgba(56, 201, 214, 0.14);
+  filter: blur(2px);
+}
+
+.den-home__inner {
+  position: relative;
+  z-index: 1;
+  width: min(100% - 2rem, 78rem);
+  margin: 0 auto;
+  padding: 2rem 0 4.5rem;
+}
+
+.den-home__hero,
+.den-home__program,
+.den-home__content,
+.den-home__partners {
+  position: relative;
+}
+
+.den-home__poster,
+.den-home__program,
+.den-home__content,
+.den-home__partners {
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: var(--den-radius-xl);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.52));
+  box-shadow: var(--den-shadow);
+  backdrop-filter: blur(14px);
+}
+
+.den-home__poster {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  gap: 2rem;
+  padding: 2.2rem;
+}
+
+.den-home__poster-copy {
+  display: grid;
+  align-content: start;
+  gap: 1.3rem;
+}
+
+.den-home__eyebrow,
+.den-home__section-kicker {
+  margin: 0;
+  color: var(--den-turquoise-deep);
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.den-home__brand {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.den-home__brand-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.den-home__brand-row--top {
+  justify-content: center;
+}
+
+.den-home__brand-row--bottom {
+  justify-content: center;
+}
+
+.den-home__brand-bubble {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: clamp(4.5rem, 8vw, 6.2rem);
+  height: clamp(4.5rem, 8vw, 6.2rem);
+  border-radius: 999px;
+  background: linear-gradient(180deg, #42d4df, #26b7c7);
+  color: #ffffff;
+  font-family: "Arial Rounded MT Bold", "Trebuchet MS", sans-serif;
+  font-size: clamp(2rem, 4.5vw, 3.5rem);
+  line-height: 1;
+  box-shadow:
+    inset 0 -0.22rem 0 rgba(0, 0, 0, 0.08),
+    0 18px 30px rgba(10, 149, 167, 0.16);
+}
+
+.den-home__brand-bubble--icon {
+  position: relative;
+}
+
+.den-home__brand-bubble--headphones::before,
+.den-home__brand-bubble--headphones::after,
+.den-home__brand-bubble--smile::before,
+.den-home__brand-bubble--smile::after {
+  position: absolute;
+  content: "";
+}
+
+.den-home__brand-bubble--headphones::before {
+  top: 27%;
+  width: 44%;
+  height: 30%;
+  border: 0.34rem solid #ffffff;
+  border-bottom: 0;
+  border-radius: 999px 999px 0 0;
+}
+
+.den-home__brand-bubble--headphones::after {
+  bottom: 30%;
+  width: 46%;
+  height: 20%;
+  background:
+    radial-gradient(circle at left center, #ffffff 0 0.34rem, transparent 0.38rem),
+    radial-gradient(circle at right center, #ffffff 0 0.34rem, transparent 0.38rem);
+}
+
+.den-home__brand-bubble--smile::before {
+  top: 27%;
+  width: 46%;
+  height: 18%;
+  background:
+    radial-gradient(circle at left center, #ffffff 0 0.34rem, transparent 0.38rem),
+    radial-gradient(circle at right center, #ffffff 0 0.34rem, transparent 0.38rem);
+}
+
+.den-home__brand-bubble--smile::after {
+  bottom: 24%;
+  width: 42%;
+  height: 28%;
+  border: 0.34rem solid #ffffff;
+  border-top: 0;
+  border-radius: 0 0 999px 999px;
+}
+
+.den-home__claim {
+  width: fit-content;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0.9rem 1.6rem 1rem;
+  border-radius: 1.6rem;
+  background: #ffffff;
+  box-shadow: 0 12px 28px rgba(69, 127, 141, 0.12);
+  font-family: "Arial Rounded MT Bold", "Trebuchet MS", sans-serif;
+  font-size: clamp(1.6rem, 3.8vw, 3rem);
+  line-height: 1.04;
+}
+
+.den-home__lead {
+  max-width: 34rem;
+  margin: 0 auto;
+  color: var(--den-muted);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  text-align: center;
+}
+
+.den-home__lead p {
+  margin: 0;
+}
+
+.den-home__facts {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.85rem;
+}
+
+.den-home__fact {
+  padding: 1rem 1.1rem;
+  border: 1px solid rgba(14, 168, 191, 0.09);
+  border-radius: var(--den-radius-lg);
+  background: rgba(255, 255, 255, 0.72);
+  text-align: left;
+}
+
+.den-home__fact-label,
+.den-home__fact-value {
+  margin: 0;
+}
+
+.den-home__fact-label {
+  color: var(--den-turquoise-deep);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.den-home__fact-value {
+  margin-top: 0.4rem;
+  font-family: "Arial Rounded MT Bold", "Trebuchet MS", sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.2;
+}
+
+.den-home__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.8rem;
+}
+
+.den-home__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 10rem;
+  padding: 0.95rem 1.35rem;
+  border-radius: 999px;
+  font-weight: 800;
+  text-decoration: none;
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    background-color 180ms ease;
+}
+
+.den-home__button:hover,
+.den-home__button:focus-visible {
+  transform: translateY(-2px);
+}
+
+.den-home__button--primary {
+  background: var(--den-ink);
+  color: #ffffff;
+  box-shadow: 0 12px 24px rgba(17, 17, 17, 0.15);
+}
+
+.den-home__button--ghost {
+  border: 1px solid rgba(17, 17, 17, 0.12);
+  background: rgba(255, 255, 255, 0.76);
+  color: var(--den-ink);
+}
+
+.den-home__poster-visual {
+  position: relative;
+  display: grid;
+  align-content: center;
+  min-height: 100%;
+}
+
+.den-home__stage {
+  position: relative;
+  padding: 1rem 0 2rem;
+}
+
+.den-home__stage::before {
+  position: absolute;
+  inset: 12% 8% 16%;
+  z-index: 0;
+  content: "";
+  border-radius: 2rem;
+  background:
+    radial-gradient(circle at center, rgba(255, 255, 255, 0.94) 0, rgba(255, 255, 255, 0.35) 48%, rgba(255, 255, 255, 0) 70%);
+}
+
+.den-home__illustration {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 36rem);
+  margin: 0 auto;
+}
+
+.den-home__illustration svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.den-home__badge {
+  position: absolute;
+  left: 50%;
+  bottom: 1.6rem;
+  z-index: 3;
+  display: grid;
+  align-content: center;
+  gap: 0.12rem;
+  width: clamp(12.5rem, 23vw, 16.8rem);
+  aspect-ratio: 1;
+  padding: 1.8rem;
+  border-radius: 999px;
+  background: radial-gradient(circle at 30% 30%, #f1ff9c 0, var(--den-lime) 60%, var(--den-lime-deep) 100%);
+  color: var(--den-ink);
+  transform: translateX(-50%) rotate(-5deg);
+  box-shadow: 0 24px 42px rgba(149, 178, 44, 0.28);
+}
+
+.den-home__badge p {
+  margin: 0;
+}
+
+.den-home__badge-date,
+.den-home__badge-place {
+  font-family: "Arial Rounded MT Bold", "Trebuchet MS", sans-serif;
+  text-transform: uppercase;
+}
+
+.den-home__badge-date {
+  font-size: clamp(1.7rem, 2.8vw, 2.7rem);
+  line-height: 0.96;
+}
+
+.den-home__badge-divider {
+  font-size: 1.2rem;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+}
+
+.den-home__badge-place {
+  font-size: clamp(1.35rem, 2.35vw, 2.15rem);
+  line-height: 0.98;
+}
+
+.den-home__paper {
+  position: absolute;
+  z-index: 4;
+  display: flex;
+  gap: 0.55rem;
+  padding: 0.7rem 1rem;
+  border-radius: 1rem;
+  background: rgba(255, 250, 244, 0.96);
+  color: var(--den-ink);
+  font-family: "Arial Rounded MT Bold", "Trebuchet MS", sans-serif;
+  font-size: 0.88rem;
+  box-shadow: 0 10px 24px rgba(89, 125, 135, 0.12);
+}
+
+.den-home__paper span + span::before {
+  content: "•";
+  margin-right: 0.55rem;
+  color: var(--den-turquoise-deep);
+}
+
+.den-home__paper--top {
+  top: 0.8rem;
+  right: 1.1rem;
+  transform: rotate(5deg);
+}
+
+.den-home__paper--side {
+  bottom: 7rem;
+  left: 0.3rem;
+  transform: rotate(-8deg);
+}
+
+.den-home__sparkle {
+  position: absolute;
+  z-index: 2;
+  display: flex;
+  gap: 0.42rem;
+}
+
+.den-home__sparkle span {
+  display: inline-block;
+  width: 1.65rem;
+  height: 0.82rem;
+  border: 0.24rem solid var(--den-turquoise);
+  border-top: 0;
+  border-radius: 0 0 999px 999px;
+}
+
+.den-home__sparkle--left {
+  left: 0;
+  top: 24%;
+}
+
+.den-home__sparkle--right {
+  right: 0;
+  top: 34%;
+}
+
+.den-home__program,
+.den-home__content,
+.den-home__partners {
+  margin-top: 2rem;
+  padding: 2rem;
+}
+
+.den-home__section-heading {
+  display: grid;
+  gap: 0.55rem;
+  margin-bottom: 1.5rem;
+}
+
+.den-home__section-heading--split {
+  grid-template-columns: minmax(0, 1fr) minmax(16rem, 24rem);
+  align-items: end;
+}
+
+.den-home__section-heading h2 {
+  margin: 0;
+  font-family: "Arial Rounded MT Bold", "Trebuchet MS", sans-serif;
+  font-size: clamp(1.9rem, 3vw, 2.7rem);
+  line-height: 1.04;
+}
+
+.den-home__section-note {
+  margin: 0;
+  color: var(--den-muted);
+  font-size: 0.98rem;
+  line-height: 1.6;
+}
+
+.den-home__timeline {
+  position: relative;
+  display: grid;
+  gap: 1rem;
+}
+
+.den-home__timeline::before {
+  position: absolute;
+  top: 1rem;
+  bottom: 1rem;
+  left: 5.65rem;
+  width: 2px;
+  content: "";
+  background: linear-gradient(180deg, rgba(14, 168, 191, 0.16), rgba(14, 168, 191, 0.04));
+}
+
+.den-home__timeline-item {
+  position: relative;
+  display: grid;
+  grid-template-columns: 5rem minmax(0, 1fr);
+  gap: 1.1rem;
+  align-items: start;
+}
+
+.den-home__timeline-item::before {
+  position: absolute;
+  top: 1.1rem;
+  left: 5.25rem;
+  z-index: 1;
+  width: 0.8rem;
+  height: 0.8rem;
+  content: "";
+  border: 0.2rem solid #ffffff;
+  border-radius: 999px;
+  background: var(--den-turquoise);
+  box-shadow: 0 0 0 0.28rem rgba(56, 201, 214, 0.14);
+}
+
+.den-home__timeline-time {
+  margin: 0;
+  padding-top: 0.45rem;
+  color: var(--den-turquoise-deep);
+  font-family: "Arial Rounded MT Bold", "Trebuchet MS", sans-serif;
+  font-size: 1.45rem;
+  line-height: 1;
+}
+
+.den-home__timeline-card {
+  padding: 1.15rem 1.2rem 1.1rem;
+  border-radius: 1.35rem;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(240, 252, 255, 0.96));
+  box-shadow:
+    inset 0 0 0 1px rgba(14, 168, 191, 0.08),
+    0 14px 28px rgba(97, 154, 167, 0.07);
+}
+
+.den-home__timeline-title,
+.den-home__timeline-text {
+  margin: 0;
+}
+
+.den-home__timeline-title {
+  font-size: 1.22rem;
+  line-height: 1.2;
+}
+
+.den-home__timeline-text {
+  margin-top: 0.45rem;
+  color: var(--den-muted);
+  line-height: 1.65;
+}
+
+.den-home__content-copy {
+  color: var(--den-muted);
+  font-size: 1.04rem;
+  line-height: 1.75;
+}
+
+.den-home__content-copy > :first-child {
+  margin-top: 0;
+}
+
+.den-home__content-copy .page-header {
+  display: none;
+}
+
+.den-home__partners-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.9rem;
+}
+
+.den-home__partner {
+  display: grid;
+  place-items: center;
+  min-height: 7rem;
+  padding: 1rem;
+  border: 1px dashed rgba(17, 17, 17, 0.14);
+  border-radius: 1.35rem;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.88), rgba(247, 252, 255, 0.88));
+  color: rgba(17, 17, 17, 0.5);
+  font-size: 0.84rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.content-info {
+  padding: 0 1rem 2rem;
+}
+
+.content-info__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(16rem, 24rem);
+  gap: 1.5rem;
+  width: min(100%, 78rem);
+  margin: 0 auto;
+  padding: 1.5rem 1.6rem;
+  border: 1px solid rgba(255, 255, 255, 0.62);
+  border-radius: 1.8rem;
+  background: rgba(255, 255, 255, 0.66);
+  box-shadow: 0 14px 34px rgba(74, 145, 161, 0.08);
+  backdrop-filter: blur(12px);
+}
+
+.content-info__eyebrow,
+.content-info__title,
+.content-info__text,
+.content-info__copyright {
+  margin: 0;
+}
+
+.content-info__eyebrow {
+  color: var(--den-turquoise-deep);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.content-info__title {
+  margin-top: 0.35rem;
+  font-family: "Arial Rounded MT Bold", "Trebuchet MS", sans-serif;
+  font-size: 1.4rem;
+}
+
+.content-info__text,
+.content-info__copyright {
+  color: var(--den-muted);
+  line-height: 1.6;
+}
+
+.content-info__text {
+  margin-top: 0.4rem;
+}
+
+.content-info__copyright {
+  margin-top: 0.8rem;
+  font-size: 0.94rem;
+}
+
+@media (max-width: 1024px) {
+  .banner__inner,
+  .content-info__inner {
+    grid-template-columns: 1fr;
+  }
+
+  .banner__tagline {
+    display: none;
+  }
+
+  .den-home__poster {
+    grid-template-columns: 1fr;
+  }
+
+  .den-home__poster-copy {
+    text-align: center;
+  }
+
+  .den-home__lead {
+    margin-inline: auto;
+  }
+
+  .den-home__section-heading--split {
+    grid-template-columns: 1fr;
+  }
+
+  .den-home__section-note {
+    max-width: 34rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .den-home__inner {
+    width: min(100% - 1.25rem, 78rem);
+    padding-top: 1.25rem;
+  }
+
+  .den-home__facts,
+  .den-home__partners-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .den-home__paper--side {
+    left: 1rem;
+    bottom: 5.8rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .banner {
+    padding-top: 0.75rem;
+  }
+
+  .banner__inner {
+    align-items: flex-start;
+    flex-direction: column;
+    border-radius: 1.5rem;
+  }
+
+  .nav {
+    width: 100%;
+  }
+
+  .nav__item,
+  .nav__link {
+    width: 100%;
+  }
+
+  .page-shell {
+    width: min(100% - 1.25rem, 70rem);
+    padding: 1.25rem 0 3rem;
+  }
+
+  .page-article,
+  .content-info__inner {
+    padding: 1.35rem;
+  }
+
+  .den-home__poster,
+  .den-home__program,
+  .den-home__content,
+  .den-home__partners {
+    padding: 1.35rem;
+  }
+
+  .den-home__facts,
+  .den-home__partners-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .den-home__actions {
+    flex-direction: column;
+  }
+
+  .den-home__button {
+    width: 100%;
+  }
+
+  .den-home__paper {
+    position: static;
+    justify-content: center;
+    margin-bottom: 0.8rem;
+    transform: none;
+  }
+
+  .den-home__stage {
+    padding-top: 0;
+  }
+
+  .den-home__sparkle {
+    display: none;
+  }
+
+  .den-home__badge {
+    position: relative;
+    left: auto;
+    bottom: auto;
+    width: min(100%, 15.5rem);
+    margin: -2.2rem auto 0;
+    transform: rotate(-4deg);
+  }
+
+  .den-home__timeline::before {
+    left: 1rem;
+  }
+
+  .den-home__timeline-item {
+    grid-template-columns: 1fr;
+    gap: 0.6rem;
+    padding-left: 1.9rem;
+  }
+
+  .den-home__timeline-item::before {
+    left: 0.6rem;
+  }
+
+  .den-home__timeline-time {
+    padding-top: 0;
+    font-size: 1.2rem;
+  }
+}

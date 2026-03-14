@@ -1,3 +1,18 @@
 <footer class="content-info">
+  <div class="content-info__inner">
+    <div class="content-info__brand">
+      <p class="content-info__eyebrow">Deň rodiny</p>
+      <p class="content-info__title">{!! $siteName !!}</p>
+      @if (! empty($siteDescription))
+        <p class="content-info__text">{{ $siteDescription }}</p>
+      @endif
+    </div>
+
+    <div class="content-info__meta">
+      <p class="content-info__text">Rodinné stretnutie, program v parku a priestor pre partnerov.</p>
+      <p class="content-info__copyright">© {{ date('Y') }} {!! $siteName !!}</p>
+    </div>
+  </div>
+
   @php(dynamic_sidebar('sidebar-footer'))
 </footer>
