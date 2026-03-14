@@ -14,5 +14,7 @@
     </div>
   </div>
 
-  @php(dynamic_sidebar('sidebar-footer'))
+  @if (! (is_post_type_archive('tribe_events') || is_singular('tribe_events') || (function_exists('tribe_is_event_query') && tribe_is_event_query())))
+    @php(dynamic_sidebar('sidebar-footer'))
+  @endif
 </footer>

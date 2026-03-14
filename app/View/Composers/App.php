@@ -51,7 +51,41 @@ class App extends Composer
             ];
         }
 
+        if ($eventsUrl = $this->eventsArchiveUrl()) {
+            $items[] = [
+                'label' => 'Podujatia',
+                'url' => $eventsUrl,
+                'active' => $this->isEventsArchiveActive(),
+            ];
+        }
+
         return $items;
+    }
+
+    protected function eventsArchiveUrl(): ?string
+    {
+        if (function_exists('tribe_get_events_link')) {
+            return tribe_get_events_link();
+        }
+
+        if (post_type_exists('tribe_events')) {
+            return get_post_type_archive_link('tribe_events') ?: null;
+        }
+
+        return null;
+    }
+
+    protected function isEventsArchiveActive(): bool
+    {
+        if (is_post_type_archive('tribe_events') || is_singular('tribe_events')) {
+            return true;
+        }
+
+        if (function_exists('tribe_is_event_query') && tribe_is_event_query()) {
+            return true;
+        }
+
+        return false;
     }
 
     protected function findPageBySlugOrTitle(string $slug, string $title): ?\WP_Post
